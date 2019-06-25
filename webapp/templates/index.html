@@ -11,26 +11,26 @@
     <title>{{page_title}}</title>
   </head>
   <body>
-    <div class='conteiner'>
-    <h1>Новостной сайт</h1>
-    <div clas='row'>
+    <div class='container'>
+      <h1>Новостной сайт</h1>
+      <div class='row'>
         <div class='col-8'>
             <h2>Новости</h2>
-            {%for news in news_list%}
-            <h3><a hrev='{{news.url}}'>{{news.title}}</a></h3>
-            <p>{{news.published</p>
+            {% for news in news_list %}
+            <h3><a href='{{ news.url }}'>{{ news.title }}</a></h3>
+            <p>{{ news.published }}</p>
             </hr>
-            {%endfor%}
+            {% endfor %}
         </div>
         <div class='col-4'>
             <h2>Прогноз погоды</h2>
-            {% if weather %}
-            {{ weather.temp_C }}, Ощущается как {{ weather.FeelsLikeC }}
+            {% if weather_text %}
+              {{ weather_text.temp_C }}, Ощущается как {{ weather_text.FeelsLikeC }}
             {% else %}
-            Сервис погоды временно недоступен
+              Сервис погоды временно недоступен
             {% endif %}
         </div>
-    </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
